@@ -1,0 +1,1 @@
+/dataDisk/Collisions/TrigEgamma_New_DefaultTriggers.root

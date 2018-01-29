@@ -1,0 +1,107 @@
+package taylorsPackage
+
+author childers@mail.cern.ch
+
+
+###############################################################################
+# Declare used packages (No version specified implies the latest version)
+###############################################################################
+
+use L1CaloPolicy
+use COOL * TDAQExternal
+use coolL1Calo
+use rootExternal
+use channelMappings
+
+###############################################################################
+# Public section: declare _only_ the macros and environment variables that
+# are required by _other_ CMT packages which use this one. Everything else
+# should go in the private section.
+# NB the install_jar pattern updates the TDAQ_CLASSPATH environment variable,
+# which is used by the build_jar pattern, so it must be in the public section.
+###############################################################################
+
+public
+
+# Additional compiler option for building copied KDE classes.
+
+#macro_append    cppflags             " -DNO_KDE2 -DNO_INCLUDE_MOCFILES "
+
+
+###############################################################################
+# Private section: declare anything which is not required by other packages.
+# This should include building all our libraries and applications including
+# those which are installed, all the installation and check targets, etc.
+###############################################################################
+
+private
+
+# Generate the Qt "moc" files using the "meta object compiler".
+
+# document        moc moc_src     -s=../$(package) *.h
+
+# Ensure we generate moc files before building the library.
+
+# macro           taylorsPackage_dependencies       moc_src
+
+
+###############################################################################
+# Put all the classes into a library.
+###############################################################################
+
+library         taypackana               *.cpp
+
+###############################################################################
+# Link options for our applications.
+###############################################################################
+
+macro           common_linkopts          " $(L1CaloLinkLibs)"
+macro_append    common_linkopts          " $(LcgLinkLibs)"
+macro_append    common_linkopts          " $(OnlineLinkLibs)"
+macro_append    common_linkopts          " -lowl -lcmdline"
+macro_append    common_linkopts          " -ltaypackana"
+macro_append    common_linkopts          " $(root_linkopts)"
+macro_append    common_linkopts          " -lPostscript -lTree"
+macro_append    common_linkopts          " -llcg_CoolApplication"
+macro_append    common_linkopts          " -lpixelmap"
+macro_append    common_linkopts          " -ll1channelMappings"
+
+
+###############################################################################
+# Build applications and specify their dependencies and linkopts.
+###############################################################################
+
+application     parHistory                ../bin/parameterHistory.cxx
+macro           parHistory_dependencies   taypackana
+macro           parHistorylinkopts        $(common_linkopts)
+
+###############################################################################
+# Install targets.
+###############################################################################
+
+apply_pattern   install_apps              files="parHistory"
+apply_pattern   install_libs              files="libtaypackana.so"
+
+
+###############################################################################
+# Build our internal test applications and specify their dependencies.
+###############################################################################
+
+#application     test_cool                     ../test/test_cool.cxx
+#macro           test_cool_dependencies        l1cooldb
+#macro           test_coollinkopts             $(common_linkopts)
+
+
+###############################################################################
+# Declare "check" target: run test programs via script.
+###############################################################################
+
+#apply_pattern   check_target    name=coolL1Calo file=../test/dotests.pl
+
+
+###############################################################################
+# Package title (for Doxygen)
+###############################################################################
+
+macro           doxygen_title   "L1Calo Taylor's Analysis"
+

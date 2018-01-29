@@ -1,0 +1,127 @@
+#ifndef L1CALOPPMTREE_H
+#define L1CALOPPMTREE_H
+
+#include <vector>
+#include <string>
+#include <iostream>
+
+#include "TFile.h"
+#include "TTree.h"
+
+class L1CaloPPMTree{
+public:
+   L1CaloPPMTree(TFile *treeFile);
+   ~L1CaloPPMTree(void);
+
+   Long64_t GetEntries(void) const {return m_tree->GetEntries();};
+   Int_t GetEntry(Long64_t entry){return m_tree->GetEntry(entry);};
+
+   bool SetEntry(const unsigned int coolId);
+
+   void Clear(void);
+
+private:
+   TFile *m_treeFile;
+   TTree *m_tree;
+   Long64_t m_currentEntry;
+   
+   void Initialize(void);
+   
+   void SetBranchAddresses(void);
+   
+   /// tree variables
+   unsigned int m_t_EventNumber;
+   unsigned int m_t_RunNumber;
+   unsigned int m_t_bcid;
+   unsigned int m_t_detmask0;
+   unsigned int m_t_detmask1;
+   
+   std::vector<unsigned int>* m_t_emADC;
+   unsigned int m_t_emADCPeak;
+   unsigned int m_t_emBCID;
+   unsigned int m_t_emBCIDext;
+   unsigned int m_t_emBCIDvec;
+   unsigned int m_t_emBadCalo;
+   unsigned int m_t_emCaloQuality;
+   unsigned int m_t_emCoolId;
+   unsigned int m_t_emDeadChannel;
+   unsigned int m_t_emEnergy;
+   unsigned int m_t_emError;
+   unsigned int m_t_emIsSaturated;
+   std::vector<unsigned int>* m_t_emLUT;
+   unsigned int m_t_emPeak;
+   unsigned int m_t_emTTCellsEnergy;
+   unsigned int m_t_emTTCellsEt;
+   
+   std::vector<unsigned int>* m_t_hadADC;
+   unsigned int m_t_hadADCPeak;
+   unsigned int m_t_hadBCID;
+   unsigned int m_t_hadBCIDext;
+   unsigned int m_t_hadBCIDvec;
+   unsigned int m_t_hadBadCalo;
+   unsigned int m_t_hadCaloQuality;
+   unsigned int m_t_hadCoolId;
+   unsigned int m_t_hadDeadChannel;
+   unsigned int m_t_hadEnergy;
+   unsigned int m_t_hadError;
+   unsigned int m_t_hadIsSaturated;
+   std::vector<unsigned int>* m_t_hadLUT;
+   unsigned int m_t_hadPeak;
+   unsigned int m_t_hadTTCellsEnergy;
+   unsigned int m_t_hadTTCellsEt;
+   unsigned int m_t_hadTileCellsEnergy;
+   
+   unsigned int m_t_lbn;
+   unsigned int m_t_timestamp;
+   unsigned int m_t_timestamp_ns;
+   
+   /// tree variable names
+   std::string m_t_s_EventNumber;
+   std::string m_t_s_RunNumber;
+   std::string m_t_s_bcid;
+   std::string m_t_s_detmask0;
+   std::string m_t_s_detmask1;
+   std::string m_t_s_emADC;
+   std::string m_t_s_emADCPeak;
+   std::string m_t_s_emBCID;
+   std::string m_t_s_emBCIDext;
+   std::string m_t_s_emBCIDvec;
+   std::string m_t_s_emBadCalo;
+   std::string m_t_s_emCaloQuality;
+   std::string m_t_s_emCoolId;
+   std::string m_t_s_emDeadChannel;
+   std::string m_t_s_emEnergy;
+   std::string m_t_s_emError;
+   std::string m_t_s_emIsSaturated;
+   std::string m_t_s_emLUT;
+   std::string m_t_s_emPeak;
+   std::string m_t_s_emTTCellsEnergy;
+   std::string m_t_s_emTTCellsEt;
+   std::string m_t_s_hadADC;
+   std::string m_t_s_hadADCPeak;
+   std::string m_t_s_hadBCID;
+   std::string m_t_s_hadBCIDext;
+   std::string m_t_s_hadBCIDvec;
+   std::string m_t_s_hadBadCalo;
+   std::string m_t_s_hadCaloQuality;
+   std::string m_t_s_hadCoolId;
+   std::string m_t_s_hadDeadChannel;
+   std::string m_t_s_hadEnergy;
+   std::string m_t_s_hadError;
+   std::string m_t_s_hadIsSaturated;
+   std::string m_t_s_hadLUT;
+   std::string m_t_s_hadPeak;
+   std::string m_t_s_hadTTCellsEnergy;
+   std::string m_t_s_hadTTCellsEt;
+   std::string m_t_s_hadTileCellsEnergy;
+   std::string m_t_s_lbn;
+   std::string m_t_s_timestamp;
+   std::string m_t_s_timestamp_ns;
+   
+   
+};
+
+
+
+
+#endif

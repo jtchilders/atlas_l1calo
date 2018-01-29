@@ -1,0 +1,123 @@
+#ifndef L1CALOPPMDBTREE_H
+#define L1CALOPPMDBTREE_H
+
+#include <vector>
+#include <string>
+#include <iostream>
+
+#include "TFile.h"
+#include "TTree.h"
+
+
+class L1CaloPPMdbTree{
+public:
+   L1CaloPPMdbTree(TFile *treeFile);
+   ~L1CaloPPMdbTree(void);
+   
+   Long64_t GetEntries(void) const {return m_tree->GetEntries();};
+   Int_t GetEntry(Long64_t entry){return m_tree->GetEntry(entry);};
+   
+   bool SetEntry(const unsigned int coolId);
+   
+   void Clear(void);
+   
+   unsigned int               GetBcidEnergyRangeHigh(void){return m_t_BcidEnergyRangeHigh;};
+   unsigned int               GetBcidEnergyRangeLow(void){return m_t_BcidEnergyRangeLow;};
+   unsigned int               GetCoolId(void){return m_t_CoolId;};
+   double                     GetDacOffset(void){return m_t_DacOffset;};
+   double                     GetDacSlope(void){return m_t_DacSlope;};
+   unsigned short int         GetFirCoeff1(void){return m_t_FirCoeff1;};
+   unsigned short int         GetFirCoeff2(void){return m_t_FirCoeff2;};
+   unsigned short int         GetFirCoeff3(void){return m_t_FirCoeff3;};
+   unsigned short int         GetFirCoeff4(void){return m_t_FirCoeff4;};
+   unsigned short int         GetFirCoeff5(void){return m_t_FirCoeff5;};
+   unsigned short int         GetFirStartBit(void){return m_t_FirStartBit;};
+   unsigned int               GetFullDelayData(void){return m_t_FullDelayData;};
+   unsigned short int         GetLutNoiseCut(void){return m_t_LutNoiseCut;};
+   unsigned short int         GetLutOffset(void){return m_t_LutOffset;};
+   unsigned short int         GetLutSlope(void){return m_t_LutSlope;};
+   unsigned short int         GetLutStrategy(void){return m_t_LutStrategy;};
+   unsigned int               GetNCaloCells(void){return m_t_NCaloCells;};
+   double                     GetPedMean(void){return m_t_PedMean;};
+   unsigned int               GetPedValue(void){return m_t_PedValue;};
+   std::vector<unsigned int>* GetRxGain(void){return m_t_RxGain;};
+   std::vector<unsigned int>* GetRxStatus(void){return m_t_RxStatus;};
+   unsigned short int         GetSatBcidLevel(void){return m_t_SatBcidLevel;};
+   unsigned short int         GetSatBcidThreshHigh(void){return m_t_SatBcidThreshHigh;};
+   unsigned short int         GetSatBcidThreshLow(void){return m_t_SatBcidThreshLow;};
+   unsigned int               GetAtlasPhi(void){return m_t_atlasPhi;};
+   unsigned int               GetEta(void){return m_t_eta;};
+   unsigned int               GetL1caloPhi(void){return m_t_l1caloPhi;};
+   
+private:
+   TFile *m_treeFile;
+   TTree *m_tree;
+   Long64_t m_currentEntry;
+   
+   void Initialize(void);
+   
+   void SetBranchAddresses(void);
+   
+   /// tree variables
+   unsigned int               m_t_BcidEnergyRangeHigh;
+   unsigned int               m_t_BcidEnergyRangeLow;
+   unsigned int               m_t_CoolId;
+   double                     m_t_DacOffset;
+   double                     m_t_DacSlope;
+   unsigned short int         m_t_FirCoeff1;
+   unsigned short int         m_t_FirCoeff2;
+   unsigned short int         m_t_FirCoeff3;
+   unsigned short int         m_t_FirCoeff4;
+   unsigned short int         m_t_FirCoeff5;
+   unsigned short int         m_t_FirStartBit;
+   unsigned int               m_t_FullDelayData;
+   unsigned short int         m_t_LutNoiseCut;
+   unsigned short int         m_t_LutOffset;
+   unsigned short int         m_t_LutSlope;
+   unsigned short int         m_t_LutStrategy;
+   unsigned int               m_t_NCaloCells;
+   double                     m_t_PedMean;
+   unsigned int               m_t_PedValue;
+   std::vector<unsigned int>* m_t_RxGain;
+   std::vector<unsigned int>* m_t_RxStatus;
+   unsigned short int         m_t_SatBcidLevel;
+   unsigned short int         m_t_SatBcidThreshHigh;
+   unsigned short int         m_t_SatBcidThreshLow;
+   unsigned int               m_t_atlasPhi;
+   unsigned int               m_t_eta;
+   unsigned int               m_t_l1caloPhi;
+   
+   /// tree variable names
+   std::string                m_t_s_BcidEnergyRangeHigh;
+   std::string                m_t_s_BcidEnergyRangeLow;
+   std::string                m_t_s_CoolId;
+   std::string                m_t_s_DacOffset;
+   std::string                m_t_s_DacSlope;
+   std::string                m_t_s_FirCoeff1;
+   std::string                m_t_s_FirCoeff2;
+   std::string                m_t_s_FirCoeff3;
+   std::string                m_t_s_FirCoeff4;
+   std::string                m_t_s_FirCoeff5;
+   std::string                m_t_s_FirStartBit;
+   std::string                m_t_s_FullDelayData;
+   std::string                m_t_s_LutNoiseCut;
+   std::string                m_t_s_LutOffset;
+   std::string                m_t_s_LutSlope;
+   std::string                m_t_s_LutStrategy;
+   std::string                m_t_s_NCaloCells;
+   std::string                m_t_s_PedMean;
+   std::string                m_t_s_PedValue;
+   std::string                m_t_s_RxGain;
+   std::string                m_t_s_RxStatus;
+   std::string                m_t_s_SatBcidLevel;
+   std::string                m_t_s_SatBcidThreshHigh;
+   std::string                m_t_s_SatBcidThreshLow;
+   std::string                m_t_s_atlasPhi;
+   std::string                m_t_s_eta;
+   std::string                m_t_s_l1caloPhi;
+   
+   
+};
+
+
+#endif

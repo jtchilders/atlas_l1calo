@@ -1,0 +1,55 @@
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: job not prepared - current status: STAGED
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: from prepareForSubmission()
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: preparing working area
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: ['/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0001.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0002.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0003.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0004.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0005.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0006.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0007.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0008.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0009.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0010.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0011.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0012.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0013.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0014.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0015.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0016.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0017.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0018.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0019.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0020.data', '/castor/cern.ch/grid/atlas/DAQ/l1calo/00165297/data10_calib.00165297.calibration_L1CaloPprPhos4ScanPars.daq.RAW._lb0000._SFI-LVL1-1._0021.data']
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: copying files for working area
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: work area prepared
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: staging files - job status: STAGED
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: job is now prepared for running
+2010-09-17 15:40 - 165297_Phos4ShapeMaker - DEBUG: end of prepareForSubmission()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: job prepared - checking that files are still staged
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: job prepared - checking that files are still staged
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: from submit()
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: submitting job:
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: bsub -qatlaslarcal -o /afs/cern.ch/user/l/l1ccalib/w0/DaemonData/jobs/165297_Phos4ShapeMaker/log/165297_Phos4ShapeMaker.out -J165297_Phos4ShapeMaker /afs/cern.ch/user/l/l1ccalib/w0/DaemonData/jobs/165297_Phos4ShapeMaker/config/submit.py
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: Job <94827069> is submitted to queue <atlaslarcal>.
+2010-09-17 15:43 - 165297_Phos4ShapeMaker - DEBUG: end of submit()
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6ef784c>
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: job batch status: RUN
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6fcb94c>
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: job batch status: RUN
+2010-09-17 15:45 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6ea56ec>
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: job batch status: RUN
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6fcbfec>
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: job batch status: RUN
+2010-09-17 15:48 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6ea18cc>
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: job no longer running - seting status to DONE
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: from updateStatus()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: job already submitted - getting status from ressourceWatcher
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: <ResourceWatcher.BatchJob instance at 0xf6fcb9cc>
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: job no longer running - seting status to DONE
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: end of updateStatus()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: from checkProcessedOk()
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: FAILED
+2010-09-17 15:50 - 165297_Phos4ShapeMaker - DEBUG: end of checkProcessedOk()

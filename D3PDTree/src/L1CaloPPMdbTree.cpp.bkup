@@ -1,0 +1,179 @@
+#include "L1CaloPPMdbTree.h"
+
+
+L1CaloPPMdbTree::L1CaloPPMdbTree(TFile *treeFile):
+   m_treeFile(treeFile)
+{
+   m_tree = 0;
+   m_tree = (TTree*)m_treeFile->Get("L1CaloPPMdbTree");
+   if(m_tree == 0){
+      std::cerr << "[L1CaloPPMdbTree::L1CaloPPMdbTree] ERROR, no L1CaloPPMdbTree found in file " << m_treeFile->GetName() << std::endl;
+      return;
+   }
+   
+   Initialize();
+}
+
+void L1CaloPPMdbTree::Initialize(void){
+   
+   m_currentEntry = 0;
+   
+   /// initialize tree variables
+   Clear();
+   
+   /// tree variable names
+   m_t_s_BcidEnergyRangeHigh = "BcidEnergyRangeHigh";
+   m_t_s_BcidEnergyRangeLow  = "BcidEnergyRangeLow";
+   m_t_s_CoolId              = "CoolId";
+   m_t_s_DacOffset           = "DacOffset";
+   m_t_s_DacSlope            = "DacSlope";
+   m_t_s_FirCoeff1           = "FirCoeff1";
+   m_t_s_FirCoeff2           = "FirCoeff2";
+   m_t_s_FirCoeff3           = "FirCoeff3";
+   m_t_s_FirCoeff4           = "FirCoeff4";
+   m_t_s_FirCoeff5           = "FirCoeff5";
+   m_t_s_FirStartBit         = "FirStartBit";
+   m_t_s_FullDelayData       = "FullDelayData";
+   m_t_s_LutNoiseCut         = "LutNoiseCut";
+   m_t_s_LutOffset           = "LutOffset";
+   m_t_s_LutSlope            = "LutSlope";
+   m_t_s_LutStrategy         = "LutStrategy";
+   m_t_s_NCaloCells          = "NCaloCells";
+   m_t_s_PedMean             = "PedMean";
+   m_t_s_PedValue            = "PedValue";
+   m_t_s_RxGain              = "RxGain";
+   m_t_s_RxStatus            = "RxStatus";
+   m_t_s_SatBcidLevel        = "SatBcidLevel";
+   m_t_s_SatBcidThreshHigh   = "SatBcidThreshHigh";
+   m_t_s_SatBcidThreshLow    = "SatBcidThreshLow";
+   m_t_s_atlasPhi            = "atlasPhi";
+   m_t_s_eta                 = "eta";
+   m_t_s_l1caloPhi           = "l1caloPhi";
+}
+
+void L1CaloPPMdbTree::Clear(void){
+   /// initialize tree variables
+   m_t_BcidEnergyRangeHigh   = 0;
+   m_t_BcidEnergyRangeLow    = 0;
+   m_t_CoolId                = 0;
+   m_t_DacOffset             = 0.;
+   m_t_DacSlope              = 0.;
+   m_t_FirCoeff1             = 0;
+   m_t_FirCoeff2             = 0;
+   m_t_FirCoeff3             = 0;
+   m_t_FirCoeff4             = 0;
+   m_t_FirCoeff5             = 0;
+   m_t_FirStartBit           = 0;
+   m_t_FullDelayData         = 0;
+   m_t_LutNoiseCut           = 0;
+   m_t_LutOffset             = 0;
+   m_t_LutSlope              = 0;
+   m_t_LutStrategy           = 0;
+   m_t_NCaloCells            = 0;
+   m_t_PedMean               = 0.;
+   m_t_PedValue              = 0;
+   m_t_RxGain                = 0;
+   m_t_RxStatus              = 0;
+   m_t_SatBcidLevel          = 0;
+   m_t_SatBcidThreshHigh     = 0;
+   m_t_SatBcidThreshLow      = 0;
+   m_t_atlasPhi              = 0;
+   m_t_eta                   = 0;
+   m_t_l1caloPhi             = 0;
+}
+
+void L1CaloPPMdbTree::SetBranchAddresses(void){
+   m_tree->SetBranchAddress(m_t_s_BcidEnergyRangeHigh.c_str(),&m_t_BcidEnergyRangeHigh);
+   m_tree->SetBranchAddress(m_t_s_BcidEnergyRangeLow.c_str() ,&m_t_BcidEnergyRangeLow);
+   m_tree->SetBranchAddress(m_t_s_CoolId.c_str()             ,&m_t_CoolId);
+   m_tree->SetBranchAddress(m_t_s_DacOffset.c_str()          ,&m_t_DacOffset);
+   m_tree->SetBranchAddress(m_t_s_DacSlope.c_str()           ,&m_t_DacSlope);
+   m_tree->SetBranchAddress(m_t_s_FirCoeff1.c_str()          ,&m_t_FirCoeff1);
+   m_tree->SetBranchAddress(m_t_s_FirCoeff2.c_str()          ,&m_t_FirCoeff2);
+   m_tree->SetBranchAddress(m_t_s_FirCoeff3.c_str()          ,&m_t_FirCoeff3);
+   m_tree->SetBranchAddress(m_t_s_FirCoeff4.c_str()          ,&m_t_FirCoeff4);
+   m_tree->SetBranchAddress(m_t_s_FirCoeff5.c_str()          ,&m_t_FirCoeff5);
+   m_tree->SetBranchAddress(m_t_s_FirStartBit.c_str()        ,&m_t_FirStartBit);
+   m_tree->SetBranchAddress(m_t_s_FullDelayData.c_str()      ,&m_t_FullDelayData);
+   m_tree->SetBranchAddress(m_t_s_LutNoiseCut.c_str()        ,&m_t_LutNoiseCut);
+   m_tree->SetBranchAddress(m_t_s_LutOffset.c_str()          ,&m_t_LutOffset);
+   m_tree->SetBranchAddress(m_t_s_LutSlope.c_str()           ,&m_t_LutSlope);
+   m_tree->SetBranchAddress(m_t_s_LutStrategy.c_str()        ,&m_t_LutStrategy);
+   m_tree->SetBranchAddress(m_t_s_NCaloCells.c_str()         ,&m_t_NCaloCells);
+   m_tree->SetBranchAddress(m_t_s_PedMean.c_str()            ,&m_t_PedMean);
+   m_tree->SetBranchAddress(m_t_s_PedValue.c_str()           ,&m_t_PedValue);
+   m_tree->SetBranchAddress(m_t_s_RxGain.c_str()             ,&m_t_RxGain);
+   m_tree->SetBranchAddress(m_t_s_RxStatus.c_str()           ,&m_t_RxStatus);
+   m_tree->SetBranchAddress(m_t_s_SatBcidLevel.c_str()       ,&m_t_SatBcidLevel);
+   m_tree->SetBranchAddress(m_t_s_SatBcidThreshHigh.c_str()  ,&m_t_SatBcidThreshHigh);
+   m_tree->SetBranchAddress(m_t_s_SatBcidThreshLow.c_str()   ,&m_t_SatBcidThreshLow);
+   m_tree->SetBranchAddress(m_t_s_atlasPhi.c_str()           ,&m_t_atlasPhi);
+   m_tree->SetBranchAddress(m_t_s_eta.c_str()                ,&m_t_eta);
+   m_tree->SetBranchAddress(m_t_s_l1caloPhi.c_str()          ,&m_t_l1caloPhi);
+}
+
+bool L1CaloPPMdbTree::SetEntry(const unsigned int coolId){
+   
+   // clear the data variables
+   Clear();
+   
+   m_tree->GetEntry(m_currentEntry);
+   
+   
+   if(m_t_CoolId == coolId){
+      return true;
+   }
+   else if(m_t_CoolId < coolId){
+      
+      for(Long64_t entry=m_currentEntry+1;entry<m_tree->GetEntries();++entry){
+         m_tree->GetEntry(entry);
+         
+         if(m_t_CoolId == coolId){
+            m_currentEntry = entry;
+            return true;
+         }
+         
+      }
+      // if the entry was not found than check the other entries
+      for(Long64_t entry=m_currentEntry-1;entry>=0;--entry){
+         m_tree->GetEntry(entry);
+         
+         if(m_t_CoolId == coolId){
+            m_currentEntry = entry;
+            return true;
+         }
+         
+      }
+   }
+   else if(m_t_CoolId > coolId){
+      
+      for(Long64_t entry=m_currentEntry-1;entry>=0;--entry){
+         m_tree->GetEntry(entry);
+         
+         if(m_t_CoolId == coolId){
+            m_currentEntry = entry;
+            return true;
+         }
+         
+      }
+      
+      for(Long64_t entry=m_currentEntry+1;entry<m_tree->GetEntries();++entry){
+         m_tree->GetEntry(entry);
+         
+         if(m_t_CoolId == coolId){
+            m_currentEntry = entry;
+            return true;
+         }
+         
+      }
+      
+   }
+   else{
+      std::cerr << "[L1CaloPPMdbTree::SetEntry] ERROR Something strange is going on. Should reach this case.\n";
+      return false;
+   }
+   
+   return false;
+}
+
+

@@ -1,0 +1,88 @@
+#include "L1CaloPPMTree.h"
+
+
+L1CaloPPMTree::L1CaloPPMTree(TFile *treeFile):
+   m_treeFile(treeFile)
+{
+   m_tree = 0;
+   m_tree = (TTree*)m_treeFile->Get("L1CaloPPMTree");
+   if(m_tree == 0){
+      std::cerr << "[L1CaloPPMTree::L1CaloPPMTree] ERROR, no L1CaloPPMTree found in file " << m_treeFile->GetName() << std::endl;
+      return;
+   }
+   
+   Initialize();
+}
+
+
+void L1CaloPPMdbTree::Initialize(void){
+   
+   m_currentEntry = 0;
+   
+   /// initialize tree variables
+   Clear();
+   
+   /// tree variable names
+   m_t_s_BcidEnergyRangeHigh = "BcidEnergyRangeHigh";
+   m_t_s_BcidEnergyRangeLow  = "BcidEnergyRangeLow";
+   m_t_s_CoolId              = "CoolId";
+   m_t_s_DacOffset           = "DacOffset";
+   m_t_s_DacSlope            = "DacSlope";
+   m_t_s_FirCoeff1           = "FirCoeff1";
+   m_t_s_FirCoeff2           = "FirCoeff2";
+   m_t_s_FirCoeff3           = "FirCoeff3";
+   m_t_s_FirCoeff4           = "FirCoeff4";
+   m_t_s_FirCoeff5           = "FirCoeff5";
+   m_t_s_FirStartBit         = "FirStartBit";
+   m_t_s_FullDelayData       = "FullDelayData";
+   m_t_s_LutNoiseCut         = "LutNoiseCut";
+   m_t_s_LutOffset           = "LutOffset";
+   m_t_s_LutSlope            = "LutSlope";
+   m_t_s_LutStrategy         = "LutStrategy";
+   m_t_s_NCaloCells          = "NCaloCells";
+   m_t_s_PedMean             = "PedMean";
+   m_t_s_PedValue            = "PedValue";
+   m_t_s_RxGain              = "RxGain";
+   m_t_s_RxStatus            = "RxStatus";
+   m_t_s_SatBcidLevel        = "SatBcidLevel";
+   m_t_s_SatBcidThreshHigh   = "SatBcidThreshHigh";
+   m_t_s_SatBcidThreshLow    = "SatBcidThreshLow";
+   m_t_s_atlasPhi            = "atlasPhi";
+   m_t_s_eta                 = "eta";
+   m_t_s_l1caloPhi           = "l1caloPhi";
+}
+
+void L1CaloPPMdbTree::Clear(void){
+   /// initialize tree variables
+   m_t_BcidEnergyRangeHigh   = 0;
+   m_t_BcidEnergyRangeLow    = 0;
+   m_t_CoolId                = 0;
+   m_t_DacOffset             = 0.;
+   m_t_DacSlope              = 0.;
+   m_t_FirCoeff1             = 0;
+   m_t_FirCoeff2             = 0;
+   m_t_FirCoeff3             = 0;
+   m_t_FirCoeff4             = 0;
+   m_t_FirCoeff5             = 0;
+   m_t_FirStartBit           = 0;
+   m_t_FullDelayData         = 0;
+   m_t_LutNoiseCut           = 0;
+   m_t_LutOffset             = 0;
+   m_t_LutSlope              = 0;
+   m_t_LutStrategy           = 0;
+   m_t_NCaloCells            = 0;
+   m_t_PedMean               = 0.;
+   m_t_PedValue              = 0;
+   m_t_RxGain                = 0;
+   m_t_RxStatus              = 0;
+   m_t_SatBcidLevel          = 0;
+   m_t_SatBcidThreshHigh     = 0;
+   m_t_SatBcidThreshLow      = 0;
+   m_t_atlasPhi              = 0;
+   m_t_eta                   = 0;
+   m_t_l1caloPhi             = 0;
+}
+
+
+
+

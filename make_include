@@ -1,0 +1,51 @@
+
+# Main Path
+ROOTPATH=/scratch/childers/hdSVN/Analysis/Workspace/childers
+
+# Channel Map Path
+CHANNELMAPPATH=$(ROOTPATH)/ChannelMap
+
+# D3PD Trees Path
+D3PDTREEPATH=$(ROOTPATH)/D3PDTree
+
+# Pixel Map Path
+PIXELMAPPATH=$(ROOTPATH)/PixelMap
+
+# rootDefinition Path
+ROOTDEFPATH=$(ROOTPATH)/RootDef
+
+# TTree Class Path
+TREECLASSPATH=$(ROOTPATH)/TTreeMakeClass
+
+# PPM Classes Path
+PPMCLASSESPATH=$(ROOTPATH)/PpmClasses
+
+# Timing Analysis Path
+TIMINGSTUDIESPATH=$(ROOTPATH)/TimingStudies
+
+# VME Slot Path
+VMESLOTPATH=$(ROOTPATH)/vmeSlot
+
+# Command Line Parser Path
+COMLINEPARSEPATH=$(ROOTPATH)/tclap-1.1.0
+COMLINEPARSEINCPATH=$(COMLINEPARSEPATH)/include
+COMLINEPARSELIB=$(MAINLIBPATH)/libtclap.so
+
+# Main Library repository path
+MAINLIBPATH=$(ROOTPATH)/lib
+
+# Common ROOT program compiler/linker options
+ROOTCOPTS=$(shell root-config --cflags)
+ROOTLOPTS=$(shell root-config --libs)
+
+# Egamma packages
+
+EGAMMAPATH=$(ROOTPATH)/egamma
+
+# Egamma Tree v1
+EGAMMA_TREE_V1=$(EGAMMAPATH)/NtupleMakeClass_v1
+# Egamma Tree v2
+EGAMMA_TREE_V2=$(EGAMMAPATH)/NtupleMakeClass_v2
+
+
+
